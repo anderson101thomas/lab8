@@ -1,0 +1,651 @@
+Analysis & Synthesis report for DE1_SoC
+Fri May 26 23:04:57 2017
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |lab8|floor:f1|nextF
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |lab8
+ 15. Parameter Settings for User Entity Instance: checkInput:i1
+ 16. Parameter Settings for User Entity Instance: checkInput:i2
+ 17. Parameter Settings for User Entity Instance: checkInput:i3
+ 18. Parameter Settings for User Entity Instance: checkInput:i4
+ 19. Parameter Settings for User Entity Instance: checkInput:i5
+ 20. Parameter Settings for User Entity Instance: checkInput:i6
+ 21. Parameter Settings for User Entity Instance: checkInput:i7
+ 22. Parameter Settings for User Entity Instance: closed:c1
+ 23. Parameter Settings for User Entity Instance: door:d3
+ 24. Parameter Settings for User Entity Instance: floor:f1
+ 25. Parameter Settings for User Entity Instance: display:d4
+ 26. Port Connectivity Checks: "floor:f1"
+ 27. Port Connectivity Checks: "destinationF:d2"
+ 28. Port Connectivity Checks: "checkInput:i6"
+ 29. Port Connectivity Checks: "checkInput:i5"
+ 30. Port Connectivity Checks: "checkInput:i4"
+ 31. Port Connectivity Checks: "checkInput:i3"
+ 32. Port Connectivity Checks: "checkInput:i2"
+ 33. Port Connectivity Checks: "checkInput:i1"
+ 34. Port Connectivity Checks: "clock_divider:cdiv"
+ 35. Post-Synthesis Netlist Statistics for Top Partition
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
+ 38. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++---------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri May 26 23:04:57 2017      ;
+; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name                   ; DE1_SoC                                    ;
+; Top-level Entity Name           ; lab8                                       ;
+; Family                          ; Cyclone V                                  ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
+; Total registers                 ; 21                                         ;
+; Total pins                      ; 67                                         ;
+; Total virtual pins              ; 0                                          ;
+; Total block memory bits         ; 0                                          ;
+; Total DSP Blocks                ; 2                                          ;
+; Total HSSI RX PCSs              ; 0                                          ;
+; Total HSSI PMA RX Deserializers ; 0                                          ;
+; Total HSSI TX PCSs              ; 0                                          ;
+; Total HSSI PMA TX Serializers   ; 0                                          ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
++---------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; lab8               ; DE1_SoC            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; State Machine Processing                                                        ; User-Encoded       ; Auto               ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                                    ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                     ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
+; closed.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ben Nguyen/Desktop/lab8/closed.sv       ;         ;
+; floor.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ben Nguyen/Desktop/lab8/floor.sv        ;         ;
+; door.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ben Nguyen/Desktop/lab8/door.sv         ;         ;
+; display.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ben Nguyen/Desktop/lab8/display.sv      ;         ;
+; direction.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ben Nguyen/Desktop/lab8/direction.sv    ;         ;
+; destinationF.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ben Nguyen/Desktop/lab8/destinationF.sv ;         ;
+; checkInput.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ben Nguyen/Desktop/lab8/checkInput.sv   ;         ;
+; lab8.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Ben Nguyen/Desktop/lab8/lab8.sv         ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 14             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 21             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 5              ;
+;     -- 5 input functions                    ; 3              ;
+;     -- 4 input functions                    ; 5              ;
+;     -- <=3 input functions                  ; 8              ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 21             ;
+;                                             ;                ;
+; I/O pins                                    ; 67             ;
+; Total DSP Blocks                            ; 2              ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 21             ;
+; Total fan-out                               ; 213            ;
+; Average fan-out                             ; 1.20           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------+--------------+
+; |lab8                      ; 21 (0)            ; 21 (0)       ; 0                 ; 2          ; 67   ; 0            ; |lab8                 ; work         ;
+;    |checkInput:i7|         ; 1 (1)             ; 1 (1)        ; 0                 ; 1          ; 0    ; 0            ; |lab8|checkInput:i7   ; work         ;
+;    |closed:c1|             ; 1 (1)             ; 1 (1)        ; 0                 ; 1          ; 0    ; 0            ; |lab8|closed:c1       ; work         ;
+;    |destinationF:d2|       ; 0 (0)             ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |lab8|destinationF:d2 ; work         ;
+;    |direction:d1|          ; 7 (7)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |lab8|direction:d1    ; work         ;
+;    |display:d4|            ; 1 (1)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |lab8|display:d4      ; work         ;
+;    |door:d3|               ; 2 (2)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |lab8|door:d3         ; work         ;
+;    |floor:f1|              ; 9 (9)             ; 6 (6)        ; 0                 ; 0          ; 0    ; 0            ; |lab8|floor:f1        ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary                                      ;
++---------------------------+-------------+---------------------+-------------------+
+; Statistic                 ; Number Used ; Available per Block ; Maximum Available ;
++---------------------------+-------------+---------------------+-------------------+
+; Independent 9x9           ; 1           ; 3.00                ; --                ;
+; Independent 18x18 plus 36 ; 1           ; 1.00                ; --                ;
+; DSP Block                 ; 2           ; --                  ; --                ;
+; DSP 18-bit Element        ; 2           ; 2.00                ; --                ;
+; DSP 27-bit Element        ; 1           ; 1.00                ; --                ;
+; Unsigned Multiplier       ; 2           ; --                  ; --                ;
++---------------------------+-------------+---------------------+-------------------+
+
+
+Encoding Type:  User-Encoded
++-----------------------------------------------------------------------+
+; State Machine - |lab8|floor:f1|nextF                                  ;
++-----------+---------+---------+---------+---------+---------+---------+
+; Name      ; nextF~7 ; nextF~6 ; nextF~5 ; nextF~4 ; nextF~3 ; nextF~2 ;
++-----------+---------+---------+---------+---------+---------+---------+
+; nextF.F1  ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; nextF.F2  ; 0       ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; nextF.F2M ; 0       ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; nextF.F3  ; 0       ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; nextF.F3M ; 0       ; 1       ; 0       ; 0       ; 0       ; 1       ;
+; nextF.F4  ; 1       ; 0       ; 0       ; 0       ; 0       ; 1       ;
++-----------+---------+---------+---------+---------+---------+---------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; display:d4|out0[1..6]                  ; Stuck at VCC due to stuck port data_in ;
+; display:d4|out1[5]                     ; Stuck at GND due to stuck port data_in ;
+; floor:f1|nextF~2                       ; Stuck at GND due to stuck port data_in ;
+; destinationF:d2|desF[0]                ; Stuck at VCC due to stuck port data_in ;
+; display:d4|out0[0]                     ; Stuck at VCC due to stuck port data_in ;
+; display:d4|out1[0,1]                   ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 12 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                               ;
++------------------+---------------------------+------------------------------------------------------------+
+; Register name    ; Reason for Removal        ; Registers Removed due to This Register                     ;
++------------------+---------------------------+------------------------------------------------------------+
+; floor:f1|nextF~2 ; Stuck at GND              ; display:d4|out0[0], display:d4|out1[1], display:d4|out1[0] ;
+;                  ; due to stuck port data_in ;                                                            ;
++------------------+---------------------------+------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 21    ;
+; Number of registers using Synchronous Clear  ; 3     ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |lab8|display:d4|out0[0]   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab8|floor:f1|thisF       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |lab8 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; whichClock     ; 23    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: checkInput:i1 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; A              ; 1     ; Unsigned Binary                   ;
+; B              ; 0     ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: checkInput:i2 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; A              ; 1     ; Unsigned Binary                   ;
+; B              ; 0     ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: checkInput:i3 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; A              ; 1     ; Unsigned Binary                   ;
+; B              ; 0     ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: checkInput:i4 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; A              ; 1     ; Unsigned Binary                   ;
+; B              ; 0     ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: checkInput:i5 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; A              ; 1     ; Unsigned Binary                   ;
+; B              ; 0     ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: checkInput:i6 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; A              ; 1     ; Unsigned Binary                   ;
+; B              ; 0     ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: checkInput:i7 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; A              ; 1     ; Unsigned Binary                   ;
+; B              ; 0     ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: closed:c1 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; A              ; 0     ; Unsigned Binary               ;
+; B              ; 1     ; Unsigned Binary               ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: door:d3 ;
++----------------+--------+----------------------------+
+; Parameter Name ; Value  ; Type                       ;
++----------------+--------+----------------------------+
+; F1             ; 000001 ; Unsigned Binary            ;
+; F2             ; 000010 ; Unsigned Binary            ;
+; F2M            ; 000100 ; Unsigned Binary            ;
+; F3             ; 001000 ; Unsigned Binary            ;
+; F3M            ; 010000 ; Unsigned Binary            ;
+; F4             ; 100000 ; Unsigned Binary            ;
++----------------+--------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: floor:f1 ;
++----------------+--------+-----------------------------+
+; Parameter Name ; Value  ; Type                        ;
++----------------+--------+-----------------------------+
+; F1             ; 000001 ; Unsigned Binary             ;
+; F2             ; 000010 ; Unsigned Binary             ;
+; F2M            ; 000100 ; Unsigned Binary             ;
+; F3             ; 001000 ; Unsigned Binary             ;
+; F3M            ; 010000 ; Unsigned Binary             ;
+; F4             ; 100000 ; Unsigned Binary             ;
++----------------+--------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: display:d4 ;
++----------------+--------+-------------------------------+
+; Parameter Name ; Value  ; Type                          ;
++----------------+--------+-------------------------------+
+; F1             ; 000001 ; Unsigned Binary               ;
+; F2             ; 000010 ; Unsigned Binary               ;
+; F2M            ; 000100 ; Unsigned Binary               ;
+; F3             ; 001000 ; Unsigned Binary               ;
+; F3M            ; 010000 ; Unsigned Binary               ;
+; F4             ; 100000 ; Unsigned Binary               ;
++----------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "floor:f1"       ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; requestF ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "destinationF:d2" ;
++----------+-------+----------+---------------+
+; Port     ; Type  ; Severity ; Details       ;
++----------+-------+----------+---------------+
+; requestF ; Input ; Info     ; Stuck at GND  ;
++----------+-------+----------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "checkInput:i6"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "checkInput:i5"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "checkInput:i4"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "checkInput:i3"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "checkInput:i2"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "checkInput:i1"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:cdiv"                                                                           ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; divided_clocks ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 21                          ;
+;     SCLR              ; 3                           ;
+;     SLD               ; 3                           ;
+;     plain             ; 15                          ;
+; arriav_lcell_comb     ; 23                          ;
+;     normal            ; 23                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 5                           ;
+; arriav_mac            ; 2                           ;
+; boundary_port         ; 67                          ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.22                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Fri May 26 23:04:55 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
+Info (12021): Found 2 design units, including 2 entities, in source file closed.sv
+    Info (12023): Found entity 1: closed
+    Info (12023): Found entity 2: closed_testbench
+Info (12021): Found 2 design units, including 2 entities, in source file floor.sv
+    Info (12023): Found entity 1: floor
+    Info (12023): Found entity 2: floor_testbench
+Info (12021): Found 2 design units, including 2 entities, in source file door.sv
+    Info (12023): Found entity 1: door
+    Info (12023): Found entity 2: door_testbench
+Info (12021): Found 2 design units, including 2 entities, in source file display.sv
+    Info (12023): Found entity 1: display
+    Info (12023): Found entity 2: display_testbench
+Info (12021): Found 2 design units, including 2 entities, in source file direction.sv
+    Info (12023): Found entity 1: direction
+    Info (12023): Found entity 2: direction_testbench
+Info (12021): Found 2 design units, including 2 entities, in source file destinationf.sv
+    Info (12023): Found entity 1: destinationF
+    Info (12023): Found entity 2: destinationF_testbench
+Info (12021): Found 2 design units, including 2 entities, in source file checkinput.sv
+    Info (12023): Found entity 1: checkInput
+    Info (12023): Found entity 2: checkInput_testbench
+Info (12021): Found 3 design units, including 3 entities, in source file lab8.sv
+    Info (12023): Found entity 1: lab8
+    Info (12023): Found entity 2: clock_divider
+    Info (12023): Found entity 3: lab8_testbench
+Info (12127): Elaborating entity "lab8" for the top level hierarchy
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:cdiv"
+Info (12128): Elaborating entity "checkInput" for hierarchy "checkInput:i1"
+Info (12128): Elaborating entity "closed" for hierarchy "closed:c1"
+Info (12128): Elaborating entity "direction" for hierarchy "direction:d1"
+Info (12128): Elaborating entity "destinationF" for hierarchy "destinationF:d2"
+Info (12128): Elaborating entity "door" for hierarchy "door:d3"
+Info (12128): Elaborating entity "floor" for hierarchy "floor:f1"
+Info (12128): Elaborating entity "display" for hierarchy "display:d4"
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Ben Nguyen/Desktop/lab8/output_files/DE1_SoC.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 98 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 29 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 636 megabytes
+    Info: Processing ended: Fri May 26 23:04:58 2017
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Ben Nguyen/Desktop/lab8/output_files/DE1_SoC.map.smsg.
+
+

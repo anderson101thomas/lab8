@@ -1,0 +1,4 @@
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (10273): Verilog HDL warning at floor.sv(138): extended using "x" or "z"
+Warning (10030): Net "requestF" at lab8.sv(20) has no driver or initial value, using a default initial value '0'
+Warning (284006): Flipped 1 bits in user-encoded state machine |lab8|floor:f1|nextF

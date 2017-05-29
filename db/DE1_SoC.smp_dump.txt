@@ -1,0 +1,9 @@
+
+State Machine - |lab8|floor:f1|nextF
+Name nextF~7 nextF~6 nextF~5 nextF~4 nextF~3 nextF~2 
+nextF.F1 0 0 0 0 0 0 
+nextF.F2 0 0 0 0 1 1 
+nextF.F2M 0 0 0 1 0 1 
+nextF.F3 0 0 1 0 0 1 
+nextF.F3M 0 1 0 0 0 1 
+nextF.F4 1 0 0 0 0 1 

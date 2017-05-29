@@ -1,0 +1,53 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Ben Nguyen\Desktop\EE 271\Labs\lab1a\simulation\modelsim
+vlastTwoDigits
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 h3nQzK>UOK]DSUPJgYTfo1
+IVUP;]2ZOW1L?h7Bm?Dzj:1
+Vmaa6ccUWah5:98PJc8jFj0
+Z2 !s105 lastTwoDigits_sv_unit
+S1
+Z3 dC:\Users\Ben Nguyen\Desktop\EE 271\Labs\lab1a\simulation\modelsim
+Z4 w1492094683
+Z5 8C:/Users/Ben Nguyen/Desktop/EE 271/Labs/lab2/lastTwoDigits.sv
+Z6 FC:/Users/Ben Nguyen/Desktop/EE 271/Labs/lab2/lastTwoDigits.sv
+L0 4
+Z7 OV;L;10.1e;51
+r1
+!s85 0
+31
+Z8 !s108 1492099957.463000
+Z9 !s107 C:/Users/Ben Nguyen/Desktop/EE 271/Labs/lab2/lastTwoDigits.sv|
+Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Ben Nguyen/Desktop/EE 271/Labs/lab2|C:/Users/Ben Nguyen/Desktop/EE 271/Labs/lab2/lastTwoDigits.sv|
+!s101 -O0
+Z11 o-sv -work work -O0
+Z12 !s92 -sv -work work {+incdir+C:/Users/Ben Nguyen/Desktop/EE 271/Labs/lab2} -O0
+nlast@two@digits
+vlastTwoDigits_testbench
+R1
+!i10b 1
+!s100 3eaJ8Gf7KeNlgg5fCl>?K2
+IeEC>ZCdGGEVNAgBkCGL]M0
+VhfXW0][[3WfTAHbmiJ`VR0
+R2
+S1
+R3
+R4
+R5
+R6
+L0 14
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!s101 -O0
+R11
+R12
+nlast@two@digits_testbench
